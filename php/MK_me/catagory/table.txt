@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS `catagory`;
+CREATE TABLE IF NOT EXISTS `catagory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสสินค้า',
+  `name` varchar(30) COLLATE utf8_bin NOT NULL COMMENT 'ชื่อสินค้า',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;

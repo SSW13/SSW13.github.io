@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			var black_div = [];
+			var black_pass ;
+			var ismouse = false;
+			function start(){
+			
+				var mainNode = document.getElementById('main');
+				var r,g,b;
+				for(var i = 0 ; i < 1000 ; i++){
+				
+				
+				
+				var node = document.createElement("div");
+				
+				
+				node.setAttribute("id", ""+i);
+				
+				node.className = 'mini';
+				r = Math.round(Math.random()*254);
+				g = Math.round(Math.random()*254);
+				b = Math.round(Math.random()*254);
+				
+				
+				
+				
+				node.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+				
+				node.addEventListener("mouseover", onMouseoverDIV);
+				//node.addEventListener("click", mySecondFunction);
+				//node.addEventListener("mouseout", onMouseoutDIV);
+				node.addEventListener("mousedown", myScript);
+				node.addEventListener("mouseup", myScript2);
+				
+				
+				
+				mainNode.appendChild(node);
+
+				}
+				window.setInterval("ticker()",30);
+			}
+			
+			function onMouseoverDIV(){
+			if(ismouse == true ){
+				r=0;
+				g=0;
+				b=0;
+				this.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+				black_div[black_div.length] = this.id;
+			}}
+				
+			function myScript(){
+				ismouse = true;
+			}
+			
+			function myScript2(){
+				ismouse = false;
+			}
+
+			
+			
+			function onMouseoutDIV(){
+				
+			}
+
+			
+			
+			function ticker(){
+				for(var i = 0 ; i < 1000 ; i++){
+				if(black_div.indexOf(""+i) == -1  ){
+				
+				
+				var node = document.getElementById(""+i);
+				var r,g,b;
+				r = Math.round(Math.random()*254);
+				g = Math.round(Math.random()*254);
+				b = Math.round(Math.random()*254);
+				node.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+				}}
+			}
+			
+		</script>
+		<style  type="text/css">
+		.mini
+		{
+			width: 50px;
+			height: 50px;
+			margin : 0;
+			border-radius: 50%;
+			float:left;
+
+		}
+		body
+		{
+			margin:0;
+			padding:0px;
+		}
+		</style>
+	</head>
+	
+	
+	<body onload="start()">
+	
+		<div id="main">
+		
+		</div>
+	</body>
+
+
+</html>

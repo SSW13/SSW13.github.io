@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript">
+		function xxx(){
+			var a =  document.getElementById("a");
+			a.innerHTML = "HELLOWORLD";
+		}
+		</script>
+		<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("#btnOK").click(function()
+			{
+				$(".c").fadeOut("slow");
+				$("#b").html("HELLO");
+			}
+			);
+			
+			$(".c").mouseenter(function()
+			{
+				$(".c").fadeOut("slow");
+			});
+			
+			$("#abc").click(function()
+			{
+				$(".c").fadeIn("slow");
+				$(".c").css("background-color","red");
+			}
+			);
+			
+			$(".c").width(50);
+			$(".c").height(50);
+		}
+		);
+		</script>
+	
+	</head>
+	
+	
+	<body>
+		<div id="a">
+		</div>
+		
+		<button id="abc" onclick="xxx()">OK</button>
+		
+		<div id="b">
+		</div>
+		<button id="btnOK">OK</button>
+		
+		<div class="c">
+		asdfasdf
+		</div>
+	
+	</body>
+</html>

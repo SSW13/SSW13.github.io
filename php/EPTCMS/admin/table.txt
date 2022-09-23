@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS `pages`;
+CREATE TABLE `pages` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'รหัส',
+  `name` varchar(30) COLLATE utf8_bin NOT NULL COMMENT 'ชื่อหน้า',
+  `url` varchar(30) COLLATE utf8_bin NOT NULL COMMENT 'url',
+  `inner_url` varchar(30) COLLATE utf8_bin NOT NULL COMMENT 'urlของcontent',
+  `insert_time` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'เวลาเพื่มข้อมูล'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1;

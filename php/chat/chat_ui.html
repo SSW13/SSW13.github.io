@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript">
+		$( document ).ready(function() {
+				$("#send").click(function(){
+					
+					var x  = $("#txt").val();
+					var y  = $("#username").val();
+					  $.post("chat_send.php",
+					  {
+						username: y,
+						txt: x
+					  },
+					  function(data, status){
+						//alert("ME: " + data + "\nStatus: " + status);
+					  });
+				});
+				
+				setInterval(function(){
+					$.get("chat_get.php", function(data, status){
+						<!--alert("Data: " + data + "\nStatus: " + status);--!>
+						
+						var data_json = JSON.parse(data);
+						
+						$("#content").empty();
+
+						
+						var ctn = "<table>";
+						for(var i=0;i<data_json.length;i++){
+							ctn += '<tr>';
+							ctn += '<td>' + data_json[i][0] + '</td>';
+							ctn += '<td>' + data_json[i][1] + '</td>';
+							ctn += '</tr>';
+						}
+						ctn += "</table>";
+												
+						$("#content").html(ctn);
+					});				
+				},500);
+
+				
+			});
+		</script>
+	</head>
+
+	<body>
+		<div>
+		Username :
+		<input type="text" id="username" value="your name"></input>
+		</div>
+	
+		<div id="content">
+		
+		
+		
+		</div>
+				
+		<div>
+		<input type="text" id="txt"></input>
+		<button id = "send">SEND</button></br>
+
+		</div>
+	</body>
+
+</html>

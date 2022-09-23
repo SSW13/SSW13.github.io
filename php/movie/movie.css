@@ -1,0 +1,93 @@
+.sticy_menu
+{
+	background-color: #000000;
+	color: #aaaaaa;
+	width: 100%;
+	height: 30px;
+	padding-top: 10px;
+	padding-left: 20px;
+	font-size: 16pt;
+	font-weight: bold;
+	position: fixed;
+	margin-top: 0px;
+	z-index: 500;
+}
+
+.sticy_menu a:hover
+{
+	color: white;
+}
+
+.sticy_menu a
+{
+	color: #aaaaaa;
+	text-decoration: none;
+
+}
+
+
+body
+{
+	margin:0px;
+	padding:0px;
+
+}
+
+.movie
+{
+	width: 400px;
+	height: 600px;
+	background-color: gray;
+	float: left;
+	margin : 0px 20px 20px 0px;
+
+
+	position: relative;
+}
+
+.content
+{
+	margin-top: 0px;
+	padding-top:40px;
+
+}
+
+img{
+		width: 250px;
+		height: 400px;
+}
+
+.inner_image
+{
+	width: 250px;
+	height: 400px;
+	padding : 20px 20px 20px 20px;
+
+	position: relative;
+	margin:auto;
+}
+
+.headline
+{
+	color: #333;
+	font-size: 25pt;
+	position: relative;
+	margin:auto;
+	padding: 10px;
+	text-align: center;
+}	
+
+.description
+{
+	color: #555;
+	font-size: 14pt;
+	position: relative;
+	margin:auto;
+	padding: 10px;
+	text-align: left;
+}	
+
+.youtube
+{
+		display: none;
+}

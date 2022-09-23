@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS `mk_order`;
+CREATE TABLE IF NOT EXISTS `mk_order` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสการสั่ง',
+  `table_no` varchar(30) COLLATE utf8_bin NOT NULL COMMENT 'โต๊ะ',
+  `status` varchar(30) COLLATE utf8_bin NOT NULL COMMENT 'สถานะ',
+  `date_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'ราคา',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;

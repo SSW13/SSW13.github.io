@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script  src="jquery.colorbox.js"></script>
+		<link rel="stylesheet" href="colorbox.css"/>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="movie.css">
+		<script type="text/javascript">
+			$(document).ready(function(){
+			
+				var movie_datas =
+				[
+					{
+					movieName:'SUPERCAT',
+					poster:'cat.jpg',
+					description:'wsdfgsdfghfdghdfghdfghfghjghjk',
+					youtubeId:'https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1'
+					},
+					{
+					movieName:'SUPERCAT',
+					poster:'cat.jpg',
+					description:'wsdfgsdfghfdghdfghdfghfghjghjk',
+					youtubeId:'https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1'
+					},
+					{
+					movieName:'SUPERCAT',
+					poster:'cat.jpg',
+					description:'wsdfgsdfghfdghdfghdfghfghjghjk',
+					youtubeId:'https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1'
+					}
+				];
+				
+				
+				
+				var template = " <div class='movie'	youtubelink = '{{[[--YOUTUBE--]]}}'>\
+						<div class='inner_image'>\
+							<img src='{{[[--POSTER--]]}}' ></img>\
+						</div>\
+						<div class='headline'>\
+							{{[[--NAME--]]}}\
+						</div>\
+						<div class='description'>\
+							{{[[--DESC--]]}}\
+						</div>\
+						</div>\
+				";
+				
+				for(var i =0; i < movie_datas.length ; i++)
+				{
+					var that_movies = template;
+					that_movies = that_movies.replace("{{[[--NAME--]]}}",movie_datas[i].movieName);
+					that_movies = that_movies.replace("{{[[--DESC--]]}}",movie_datas[i].description);
+					that_movies = that_movies.replace("{{[[--POSTER--]]}}",movie_datas[i].poster);
+					that_movies = that_movies.replace("{{[[--YOUTUBE--]]}}",movie_datas[i].youtubeId);
+					
+					$("#main_content").append(that_movies);
+				}
+			
+			
+				$(".movie").css("cursor","pointer");
+			
+				$(".movie").mouseenter(function(){
+					$(this).css("background-color","#ddd");
+				
+				});
+				$(".movie").mouseleave(function(){
+					$(this).css("background-color","gray");
+				
+				});
+				$(".movie").click(function(){
+
+					var link = $(this).attr("youtubelink");
+
+					$(".youtube").attr("href",link);
+					$(".youtube").trigger("click");
+				});
+				
+				
+				$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+				
+				$('.movie').hide().first().show("fast", function showNext(){
+					$this.next("div").show("fast".showNext);
+				});
+				
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div class = "sticy_menu">
+			<a href="#">SSW THE MOVIE</a>
+		</div>
+		<a class="youtube">
+			asdfsadfasdf
+		</a>
+		
+		
+		<div id="main_content" class = "content">
+			
+		
+		</div>
+		
+	</body>
+
+
+</html>
