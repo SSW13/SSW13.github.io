@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
+    <title>Register SSW</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!--HEADER-->
+    <%- include ('header')%>
+        <section class="py-5">
+            <div class="container px-4 px-lg-5">
+                <h2>Register here!!</h2>
+            </div>
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-col-1 justify-content-center">
+                    <form action="/register" method="post">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="" placeholder="email" required class="form-control">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="" placeholder="password" required class="form-control">
+                        <label for="name">name</label>
+                        <input type="text" name="name" id="" placeholder="name" required class="form-control">
+                        <label for="phone">phone</label>
+                        <input type="text" name="phone" id="" placeholder="phone" required class="form-control">
+                        </br>
+                        </br>
+                        <input type="submit" name="submit" id="" value="Register" class="form-control" />
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!--FOOTER-->
+        <%- include ('footer')%>
+</body>
+
+</html>

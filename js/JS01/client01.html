@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+        
+        .content {
+            font-size: 25pt;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello</h1>
+    <div id="name" class="content"></div>
+    <button id="ok_btn" onclick="xx()">
+        OK
+    </button>
+
+    <script>
+        function xx() {
+            let div = document.getElementById('name');
+            div.style.backgroundColor = 'red';
+        }
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            let div = document.getElementById('name');
+            div.innerHTML = "SSW";
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('header') %>
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!--sidebar-->
+        <%- include('menu') %>
+            <div id="page-content-wrapper">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-primary" id="sidebarToggle">Toggle menu</button>
+                    </div>
+                </nav>
+
+                <!---------------------------->
+                <div class="container-fluid">
+                    <div>
+                        <h1 class="mt-4">Property Edit</h1>
+                        <form enctype="multipart/form-data" action="/dashboard/property/edit" method="post">
+                            <input type="hidden" name="id" value="<%= item.id %>">
+
+                            <label for="">real_estate_name :</label>
+                            <input type="text" name="real_estate_name" id="" value="<%= item.real_estate_name %>"><br>
+                            <label for="">lat :</label>
+                            <input type=" text " name="lat" id="" value="<%= item.lat %>"><br>
+                            <label for="">LON :</label>
+                            <input type="text" name="lon" id="" value="<%= item.lon %>"><br>
+                            <label for="">LOCATION :</label>
+                            <input type=" text " name="LOCATION" id="" value="<%= item.LOCATION %>"><br>
+                            <label for="">PROP TYPE :</label>
+                            <select name="property_type" id=""><br>
+                            <option value="<%= item.property_type %>" selected><%= item.property_type %></option>
+                            <option value="house">house</option>
+                            <option value="condominium">condominium</option>
+                            <option value="land">land</option>
+                            </select><br>
+                            <label for="">TRANSACTION :</label>
+                            <select name="TRANSACTION" id=""><br>
+                                <option value="<%= item.TRANSACTION %>" selected><%= item.TRANSACTION %></option>
+                                <option value="FOR SELL ONLY">FOR SELL ONLY</option>
+                                <option value="RENT UP TO 6 MONTHS">RENT UP TO 6 MONTHS</option>
+                                <option value="FOR RENT AND FOR SELL">FOR RENT AND FOR SELL</option>
+                            </select><br>
+                            <label for="">SALE_TERMS :</label>
+                            <select name="SALE_TERMS" id=""><br>
+                                <option value="<%= item.SALE_TERMS %>" selected><%= item.SALE_TERMS %></option>
+                                <option value="LEASEHOLD">LEASEHOLD</option>
+                                <option value="FREEHOLD">FREEHOLD</option>
+                            </select><br>
+                            <label for="">SALE_PRICE :</label>
+                            <input type=" text " name="SALE_PRICE" id="" value="<%= item.SALE_PRICE %>"><br>
+                            <label for="">RENT_PRICE</label>
+                            <input type="text" name="RENT_PRICE" id="" value="<%= item.RENT_PRICE %>"><br>
+                            <label for="">COMMON_CHARGES :</label>
+                            <input type=" text " name="COMMON_CHARGES" id="" value="<%= item.COMMON_CHARGES %>"><br>
+                            <label for="">DECORATION_STYLE :</label>
+                            <input type="text" name="DECORATION_STYLE" id="" value="<%= item.DECORATION_STYLE %>"><br>
+                            <label for="">BEDROOMS :</label>
+                            <input type=" text " name="BEDROOMS" id="" value="<%= item.BEDROOMS %>"><br>
+                            <label for="">BATHROOMS :</label>
+                            <input type="text" name="BATHROOMS" id="" value="<%= item.BATHROOMS %>"><br>
+                            <label for="">DIRECTION_OF_ROOM :</label>
+                            <select name="DIRECTION_OF_ROOM" id=""><br>
+                                <option value="<%= item.DIRECTION_OF_ROOM %>" selected><%= item.DIRECTION_OF_ROOM %></option>
+                                <option value="North">North</option>
+                                <option value="East">East</option>
+                                <option value="North">West</option>
+                                <option value="East">South</option>
+                            </select><br>
+                            <label for="">UNIT_SIZE :</label>
+                            <input type="text" name="UNIT_SIZE" id="" value="<%= item.UNIT_SIZE %>"><br>
+                            <label for="">LAND_AREA :</label>
+                            <input type="text" name="LAND_AREA" id="" value="<%= item.LAND_AREA %>"><br>
+                            <label for="">INROOM_FACILITIES :</label>
+                            <input type="text" name="INROOM_FACILITIES" id="" value="<%= item.INROOM_FACILITIES %>"><br>
+                            <label for="">PUBLIC_FACILITIES :</label>
+                            <input type="text" name="PUBLIC_FACILITIES" id="" value="<%= item.PUBLIC_FACILITIES %>"><br>
+                            <label for="">image</label>
+                            <input type="file" name="image" id="" value="<%= item.image_01 %>"><br>
+                            <label for="">image</label>
+                            <input type="file" name="image" id="" value="<%= item.image_02 %>"><br>
+                            <label for="">image</label>
+                            <input type="file" name="image" id="" value="<%= item.image_03 %>"><br>
+                            <label for="">image</label>
+                            <input type="file" name="image" id="" value="<%= item.image_04 %>"><br>
+                            <label for="">image</label>
+                            <input type="file" name="image" id="" value="<%= item.image_05 %>"><br>
+
+                            <div class="m-2 p-2">
+                                <input type="submit" name="submit" value="EDIT" class="btn btn-danger">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                <!---------------------------->
+            </div>
+    </div>
+    <%- include('footer') %>
+</body>
+
+
+</html>
